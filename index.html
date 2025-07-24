@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Notes App</h1>
+        <div class="social-buttons">
+            <a href="https://github.com/" target="_blank" class="button">GitHub</a>
+            <a href="https://www.stackoverflow.com/" target="_blank" class="button">Stack Overflow</a>
+            <a href="https://developer.mozilla.org/" target="_blank" class="button">MDN Web Docs</a>
+        </div>
+    </header>
+    <main>
+        <textarea id="noteArea" placeholder="Type your notes here..."></textarea>
+        <button id="saveButton" class="action-button">Save Note</button>
+        <div id="notesList">
+            <h2>Your Saved Notes:</h2>
+            <ul id="noteList"></ul>
+        </div>
+    </main>
+    <footer>
+        <p>© 2023 My Notes App. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
