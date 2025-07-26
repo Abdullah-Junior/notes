@@ -1,32 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Notes App</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bandeshah's Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #1e1e2f;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: #61dafb;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+
+    .link-card {
+      background: #292940;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      transition: background 0.3s;
+    }
+
+    .link-card:hover {
+      background: #3a3a5c;
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 600px;
+      height: 200px;
+      padding: 1rem;
+      font-size: 1rem;
+      background: #292940;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      resize: none;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      .link-card {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Junior Notes WEB</h1>
-        <div class="social-buttons">
-            <a href="https://github.com/" target="_blank" class="button">GitHub</a>
-            <a href="https://www.stackoverflow.com/" target="_blank" class="button">Stack Overflow</a>
-            <a href="https://developer.mozilla.org/" target="_blank" class="button">MDN Web Docs</a>
-            <a href="https://tempmailx.free.nf/?i=2" target="_blank" class="button">Temp MailX</a>
-        </div>
-    </header>
-    <main>
-        <textarea id="noteArea" placeholder="Type your notes here..."></textarea>
-        <button id="saveButton" class="action-button">Save Note</button>
-        <div id="notesList">
-            <h2>Your Saved Notes:</h2>
-            <ul id="noteList"></ul>
-        </div>
-    </main>
-    <footer>
-        <p>© 2023 My Notes App. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+
+  <h1>Bandeshah's Dashboard</h1>
+
+  <div class="links">
+    <a class="link-card" href="https://github.com" target="_blank">GitHub</a>
+    <a class="link-card" href="https://stackoverflow.com" target="_blank">StackOverflow</a>
+    <a class="link-card" href="https://chat.openai.com" target="_blank">ChatGPT</a>
+    <a class="link-card" href="https://codepen.io" target="_blank">CodePen</a>
+    <a class="link-card" href="https://developer.mozilla.org" target="_blank">MDN</a>
+    <a class="link-card" href="https://notion.so" target="_blank">Notion</a>
+    <a class="link-card" href="https://bandeshahblogs.blogspot.com">My site</a>
+    <a class="link-card" href="https://blogger.com">Blogger</a>
+  </div>
+
+  <textarea id="notes" placeholder="📝 Jot down your quick notes here..."></textarea>
+
+  <div class="footer">
+    Built with ☕ and ❤️ — Your personal dev start page😎
+  </div>
+
+  <script>
+    // Save and load notes from localStorage
+    const textarea = document.getElementById('notes');
+    textarea.value = localStorage.getItem('devNotes') || '';
+    textarea.addEventListener('input', () => {
+      localStorage.setItem('devNotes', textarea.value);
+    });
+  </script>
+
 </body>
 </html>
